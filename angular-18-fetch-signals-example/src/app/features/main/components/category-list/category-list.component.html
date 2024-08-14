@@ -1,0 +1,10 @@
+<ul>
+    @for(category of categories();  track $index;let  vi = $index) {
+    <li>
+       <button (click)="onRemove(category.name)">remove</button> <span  style="cursor: pointer;">{{category.name}}  index {{vi}}</span>
+        <app-product-list [products]="category.products"></app-product-list>
+    </li>
+    }@empty {
+        <span>Nessuna categoria è stata trovata!</span>
+    }
+</ul>
